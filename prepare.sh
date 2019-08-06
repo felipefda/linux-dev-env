@@ -14,7 +14,8 @@ nnn ddgr ttf-fira-code chromium-browser vim unzip xclip transmission-gtk
 chsh -s $(which zsh)
 
 #enable and install snap packages
-sudo snap install spotify code --classic
+sudo snap install spotify --classic
+sudo snap install code --classic
 
 #code files
 mkdir -p ~/.config/Code/User/
@@ -64,8 +65,11 @@ export NVM_DIR=$HOME/.nvm
 
 #node
 nvm install --lts
+fi
 
 #node cli packages
+if test $inst_nodeclipkg =1
+then
 npm install --global fkill-cli internal-ip-cli is-online-cli is-up-cli public-ip-cli realpath vtop wikit trash-cli empty-trash-cli wifi-password-cli tldr
 fi
 
@@ -75,6 +79,9 @@ sudo apt install -y maven
 #export java
 export JAVA_HOME="/data/jdk8"
 export PATH=$JAVA_HOME/bin:$PATH
+
+#idea
+sudo snap install intellij-idea-community --classic
 
 #ojdbc7
 if test $inst_ojdbc = 1
@@ -91,4 +98,16 @@ cd $rootpath/Oracle_Home/oracle_common/plugins/maven/com/oracle/maven/oracle-mav
 mvn install:install-file -DpomFile=oracle-maven-sync-12.2.1.pom -Dfile=oracle-maven-sync-12.2.1.jar
 mvn com.oracle.maven:oracle-maven-sync:push -DoracleHome=$rootpath/Oracle_Home/.
 
+fi
+
+#dotnet sdk
+if test $inst_dotnetsdk = 1
+then
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+
+sudo add-apt-repository universe
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install dotnet-sdk-2.2
 fi
