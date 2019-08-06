@@ -10,7 +10,7 @@ This scritps are setted for Ubuntu environment. If you need to use on another di
 ## Previous steps
 
 1. Create and set owner permissions to a folder environment (ex : /data/dev/)
-2. Put your jdks inside jdk folder compacted as tar.gz
+2. Put your jdk8.tar.gz inside jdk folder
 3. Put your oracle home folder compacted as tar.gz inside weblogic folder
 4. Put your oracle ojdbc driver inside odjbc folder
 

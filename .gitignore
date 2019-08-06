@@ -1,0 +1,4 @@
+#there are files we don`t want to be in repo
+jdk/*
+ssh/*
+ojdbc/*
