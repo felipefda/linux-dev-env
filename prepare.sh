@@ -8,7 +8,7 @@ sudo apt update && sudo apt upgrade -y
 
 #install some util packages
 sudo apt install -y curl git zsh timeshift transmission-cli gufw ttf-mscorefonts-installer 
-nnn ddgr ttf-fira-code chromium-browser vim unzip xclip transmission-gtk
+nnn ddgr ttf-fira-code chromium-browser vim unzip xclip transmission-gtk telegram-desktop
 
 #zsh default
 chsh -s $(which zsh)
